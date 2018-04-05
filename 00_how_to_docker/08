@@ -1,0 +1,4 @@
+# i: interactive t: terminal /bin/sh: overrides defaults
+
+docker run -it --rm alpine /bin/sh
+echo "docker ps to verify container removal"

@@ -1,0 +1,3 @@
+# Docker uses Go templates to format output
+
+docker inspect overload -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'

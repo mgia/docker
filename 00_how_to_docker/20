@@ -1,0 +1,7 @@
+# Docker Swarm is a clustering and scheduling tool for Docker containers.
+
+# On OS, find ip
+docker-machine ip Char
+
+# On Char, init swarm with Char ip
+docker swarm init --advertise-addr [IP_ADDR]

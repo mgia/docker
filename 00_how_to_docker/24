@@ -1,0 +1,3 @@
+# To deploy an application image when Docker Engine is in swarm mode, you create a service.
+
+docker service create --name orbital-command --hostname my-rabbit --network overmind -e RABBITMQ_DEFAULT_USER=mtan -e RABBITMQ_DEFAULT_PASS=password rabbitmq
