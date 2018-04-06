@@ -1,2 +1,4 @@
-docker run ---interactive --rm debian /bin/bash
-apt-get update && apt-get install -y gcc git vim
+docker run -it --rm debian /bin/bash
+
+# Run in debian container
+# apt-get update && apt-get upgrade && apt-get install -y gcc git vim
