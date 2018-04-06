@@ -1,2 +1,1 @@
-docker service ps -f name=engineering-bay.1 engineering-bay -q
-docker service logs -f [HASH]
+docker service logs -f "$(docker service ps -f name=engineering-bay.1 engineering-bay -q)"

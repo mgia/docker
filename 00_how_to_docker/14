@@ -1,3 +1,9 @@
 # Links provide a secure channel via which Docker containers can communicate to each other.
 
 docker run -d --name lair -p 8080:80 --link spawning-pool:mysql wordpress
+
+# docker exec -it spawning-pool bash
+# mysql -u root -p
+# Password: Kerrigan
+# use zerglings; (database)
+# select * from wp_posts (table)
