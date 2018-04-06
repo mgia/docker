@@ -1,3 +1,0 @@
-# Docker
-
-## Understanding containerization
