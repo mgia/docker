@@ -9,40 +9,29 @@ LABEL Description="Creating envirnment for MEAN stack"
 # Exposing ports for Node.js (3000), MongoDB (27017) and LiveReload (35729)
 EXPOSE 3000 27017 35729
 
-RUN apt-get update && apt-get install -y -qq \
-  git \
-  curl \
-  ssh \
-  gcc \
-  make \
-  build-essential \
-  sudo \
-  apt-utils \
-  && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get -y update && apt-get upgrade -y && apt-get install -y \
+  git curl build-essential sudo
 
 # Install Node.js
 RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - \
-  && apt-get install -y -q nodejs \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  && apt-get install -y -q nodejs
 
 # Install bower and gulp globally
-RUN npm install --quiet -g bower gulp \
-  && npm cache clean
+RUN npm install --quiet -g bower gulp
 
 # Create workdir
 RUN mkdir -p /usr/src/app
 WORKDIR /user/src/app
 
 # Clone Mean.io repository
-RUN git clone https://github.com/linnovate/mean.git /user/src/app
+RUN git clone https://github.com/meanjs/mean.git /user/src/app
 
 # Install server dependencies using npm
-RUN npm install --quiet && npm cache clean
+RUN npm install --quiet
 
 # Install client dependencies using bower
 RUN bower install --config.interactive=false --quiet --allow-root
 
 # Start server
-CMD ["gulp"]
+CMD ["npm", "start"]
 
