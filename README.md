@@ -13,5 +13,5 @@ Instructions are given in the pdf file attached in this repo. It will challenge 
 
 ## Credits
 
-Thanks to Inessa (@ulliwy) for correcting my mistakes and helping me understand right!
+Thanks to Inessa (@ulliwy) and Ivan (@IvanKozlov95) for correcting my mistakes!
 
